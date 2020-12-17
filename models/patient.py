@@ -5,4 +5,7 @@ class HospitalPatient(models.Model):
     _description= 'Manage Hospital'
 
 
-    name = fields.Char('Patient Name')
+    patient_name = fields.Char('Patient Name', required=True)
+    patient_age = fields.Integer('Age')
+    notes = fields.Text('Note')
+    image = fields.Binary('Image')
