@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- action for patient menu -->
+    <record id="action_patient" model="ir.actions.act_window">
+        <field name="type">ir.actions.act_window</field>
+        <field name="name">Patients</field>
+        <field name="res_model">hospital.patient</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Crete first Patient !
+            </p>
+        </field>
+         
+    </record>
+
+    <!-- menu hospital  -->
+    <menuitem id="hospital_root" name="Hospital" sequence="0" web_icon="om_hospital,static/description/icon.png"/>
+    <menuitem id="hospital_patient" name="Patient" parent="hospital_root" action="action_patient"/>
+</odoo>

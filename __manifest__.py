@@ -11,5 +11,8 @@
     'depends': [
         'base',
     ],
+    'data': [
+        'views/patients_view.xml'
+    ],
     'application': True,
 }
