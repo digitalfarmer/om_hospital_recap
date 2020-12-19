@@ -25,12 +25,15 @@
                 <group>
                     <group>
                          <field name="patient_name" />
-                         <field name="patient_age" />
+                         <field name="name" />
                     </group>
                     <group>
+                         <field name="patient_age" />
+                    </group>
+                </group>
+                <group>
                          <field name="notes" />
                          <field name="image" />
-                    </group>
                 </group>
             </sheet>
         </form>
