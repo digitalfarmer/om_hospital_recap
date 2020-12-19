@@ -1,5 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
+    <!-- odoo tree view patient -->
+    <record id="patient_tree" model="ir.ui.view">
+        <field name="name">hospital.patient.tree</field>
+        <field name="model">hospital.patient</field>
+        <field name="arch" type="xml">
+            <tree string="Patients">
+                <field name="patient_name" />
+                <field name="patient_age" />
+                <field name="notes" />
+                <field name="image" />
+            </tree>
+        </field>
+    </record>
+
+
+    <!-- odoo form patient -->
+    <record id="patient_form" model="ir.ui.view">
+        <field name="name">hospital.patient.form</field>
+        <field name="model">hospital.patient</field>
+        <field name="arch" type="xml">
+        <form string="Patients">
+            <sheet>
+                <group>
+                    <group>
+                         <field name="patient_name" />
+                         <field name="patient_age" />
+                    </group>
+                    <group>
+                         <field name="notes" />
+                         <field name="image" />
+                    </group>
+                </group>
+            </sheet>
+        </form>
+        </field>
+    </record>
 
     <!-- action for patient menu -->
     <record id="action_patient" model="ir.actions.act_window">
@@ -13,7 +49,6 @@
                 Crete first Patient !
             </p>
         </field>
-         
     </record>
 
     <!-- menu hospital  -->
