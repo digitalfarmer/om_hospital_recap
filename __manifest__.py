@@ -12,7 +12,8 @@
         'base',
     ],
     'data': [
-        'views/patients_view.xml'
+        'views/patients_view.xml',
+        'security/ir.model.access.csv',
     ],
     'application': True,
 }
