@@ -10,6 +10,7 @@
     'category': '',
     'depends': [
         'base',
+        'mail',
     ],
     'data': [
         'views/patients_view.xml',
