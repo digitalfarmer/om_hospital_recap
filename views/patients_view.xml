@@ -9,6 +9,7 @@
                 <field name="name_seq" />
                 <field name="patient_name" />
                 <field name="patient_age" />
+                <field name="gender" />
                 <field name="notes" />
                 <field name="image" />
             </tree>
@@ -35,6 +36,7 @@
                     </group>
                     <group>
                          <field name="patient_age" />
+                         <field name="gender" />
                     </group>
                 </group>
                 <group>
@@ -52,10 +54,28 @@
         </field>
     </record>
 
+    <!-- Search View -->
+    <record model="ir.ui.view" id="hospital_patient_search">
+        <field name="name">hospital.patient.search</field>
+        <field name="model">hospital.patient</field>
+        <field name="arch" type="xml">
+            <search string="Search Patients">
+                <field name="patient_name"  filter_domain="['|',('patient_name', 'ilike', self),('name_seq', 'ilike', self)]"  />
+                <field name="name_seq"/>
+                <separator />
+                <filter string="Male" name="male" domain="[('gender','=','male')]"/>
+                <filter string="Female" name="female" domain="[('gender','=','female')]"/>
+                <group string="Group by">
+                    <filter string="Gender" name="gender" context="{'group_by': 'gender'}"  />
+                </group>
+            </search>
+        </field>
+    </record>
+
     <!-- action for patient menu -->
     <record id="action_patient" model="ir.actions.act_window">
         <field name="type">ir.actions.act_window</field>
-        <field name="name">Patients</field>
+        <field name="patient_name">Patients</field>
         <field name="res_model">hospital.patient</field>
         <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>

@@ -11,10 +11,12 @@ class HospitalPatient(models.Model):
     notes = fields.Text('Note')
     image = fields.Binary('Image')
     name= fields.Char('Test')
-    name_seq= fields.Char("Medical Record", readonly=True, required=True, 
-    index=True, 
-    copy=False,
-    default=lambda self: _('New'))
+    name_seq= fields.Char("Medical Record", readonly=True, required=True, index=True, copy=False, default=lambda self: _('New'))
+    gender = fields.Selection([
+        ('male','Male'), 
+        ('female','Female'),
+        ('transgender','Trans Gender'),
+    ],default='male', string='Gender')
 
 
     @api.model
