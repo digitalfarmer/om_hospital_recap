@@ -15,8 +15,8 @@ class HospitalPatient(models.Model):
                 else:
                     rec.age_group = 'mayor'
 
-    patient_name = fields.Char('Patient Name', required=True)
-    patient_age = fields.Integer('Age')
+    patient_name = fields.Char('Patient Name', required=True, track_visibility='always')
+    patient_age = fields.Integer('Age', track_visibility='always')
     notes = fields.Text('Note')
     image = fields.Binary('Image')
     name= fields.Char('Test')
