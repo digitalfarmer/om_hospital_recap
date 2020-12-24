@@ -1,10 +1,17 @@
 from odoo import fields, models, api, _
+from odoo.exceptions import ValidationError
 
 class HospitalPatient(models.Model):
     _name ='hospital.patient'
     _inherit= ['mail.thread', 'mail.activity.mixin']
     _description= 'Manage Hospital'
     _rec_name= 'name_seq'
+
+    @api.constrains('patient_age')
+    def check_age(self):
+        for rec in self:
+            if rec.patient_age <= 5 :
+                raise ValidationError(_("Usia Harus di atas 5 Tahun"))
 
     @api.depends('patient_age')
     def set_age_group(self):
