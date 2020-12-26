@@ -8,7 +8,7 @@ class HospitalAppointment(models.Model):
     @api.model
     def create(self, vals):
         if vals.get('name', _('New')) == _('New'):
-            vals['name'] = self.env['ir.sequence'].next_by_code('hospital.appointment') or _('New')
+            vals['name'] = self.env['ir.sequence'].next_by_code('hospital.appointment.sequence') or _('New')
         result = super(HospitalAppointment, self).create(vals)
         return result
     
