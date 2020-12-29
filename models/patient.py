@@ -13,6 +13,7 @@ class HospitalPatient(models.Model):
             if rec.patient_age <= 5 :
                 raise ValidationError(_("Usia Harus di atas 5 Tahun"))
 
+    # compute fields set_age_group 
     @api.depends('patient_age')
     def set_age_group(self):
         for rec in self:
@@ -22,12 +23,32 @@ class HospitalPatient(models.Model):
                 else:
                     rec.age_group = 'mayor'
 
+    # open appointment from smart button
+    @api.multi
+    def open_patient_appointment(self):
+        return {
+            'name':_('Appointments'),
+            'domain':[('patient_id','=',self.id)],
+            'view_type':'form',
+            'res_model':'hospital.appointment',
+            'view_id':False,
+            'view_mode':'tree,form',
+            'type':'ir.actions.act_window',
+        }
+
+    # count appointment     
+    def get_appointment_count(self):
+        count = self.env['hospital.appointment'].search_count([('patient_id','=', self.id)])
+        self.appointment_count = count
+
     patient_name = fields.Char('Patient Name', required=True, track_visibility='always')
     patient_age = fields.Integer('Age', track_visibility='always')
     notes = fields.Text('Note')
     image = fields.Binary('Image')
     name= fields.Char('Test')
     name_seq= fields.Char("Medical Record", readonly=True, required=True, index=True, copy=False, default=lambda self: _('New'))
+    appointment_count= fields.Integer("Appointment", compute='get_appointment_count')
+
     gender = fields.Selection([
         ('male','Male'), 
         ('female','Female'),
