@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
+
+    <!-- action Appointment smart button action -->
+    <record id="open_patient_appointment" model="ir.actions.act_window">
+        
+        <field name="name">Appointments</field>
+        <field name="res_model">hospital.appointment</field>    
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+        <field name="domain">[('patient_id', '=', active_id)]</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
     <!-- odoo tree view patient -->
     <record id="patient_tree" model="ir.ui.view">
         <field name="name">hospital.patient.tree</field>
@@ -26,7 +38,12 @@
             <form string="Patients">
                 <sheet>
                     <div class="oe_button_box" name="button_box">
+                        <!-- smart button type object -->
                         <button name="open_patient_appointment" type="object" class="oe_stat_button" icon="fa-calendar">
+                            <field name="appointment_count" string="Appointment" widget="statinfo"/>
+                        </button>
+                        <!-- smart button type action -->
+                        <button name="%(open_patient_appointment)d" type="action" class="oe_stat_button" icon="fa-archive">
                             <field name="appointment_count" string="Appointment" widget="statinfo"/>
                         </button>
                     </div>
