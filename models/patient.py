@@ -7,6 +7,7 @@ class HospitalPatient(models.Model):
     _description= 'Manage Hospital'
     _rec_name= 'name_seq'
 
+#    compute fields
     @api.constrains('patient_age')
     def check_age(self):
         for rec in self:
