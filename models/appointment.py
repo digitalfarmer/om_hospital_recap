@@ -6,6 +6,18 @@ class HospitalAppointment(models.Model):
     _description= 'Appointments'
     _order = 'id desc'
 
+    def action_confirm(self):
+        for rec in self:
+            rec.state= 'confirm'
+
+    def action_done(self):
+        for rec in self:
+            rec.state= 'done'
+
+    def action_cancel(self):
+        for rec in self:
+            rec.state= 'cancel'
+
     @api.model
     def create(self, vals):
         if vals.get('name', _('New')) == _('New'):
