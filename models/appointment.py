@@ -34,6 +34,8 @@ class HospitalAppointment(models.Model):
     patient_id= fields.Many2one('hospital.patient',string='Patient', required=True)
     patient_age= fields.Integer('Age', related="patient_id.patient_age")
     notes= fields.Text('Registration Note', default=_get_default_note)
+    doctor_notes= fields.Text('Doctor notes')
+    pharmacy_notes= fields.Text('pharmacy')
     appointment_date= fields.Date('Date', required=True)
     # sate for status bar
     state = fields.Selection([
