@@ -17,6 +17,8 @@
         'views/appointment_view.xml',
         'security/ir.model.access.csv',
         'data/sequence.xml',
+        'reports/report.xml',
+        'reports/patient_card.xml',
     ],
     'application': True,
 }
