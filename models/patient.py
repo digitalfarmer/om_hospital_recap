@@ -1,6 +1,15 @@
 from odoo import fields, models, api, _
 from odoo.exceptions import ValidationError
 
+class ResPartner(models.Model):
+    _inherit='res.partner'
+
+    @api.model
+    def create(self, val_list):
+        res = super(ResPartner,self).create(val_list)
+        print("Function berhasil di overide")
+        return res
+
 class HospitalPatient(models.Model):
     _name ='hospital.patient'
     _inherit= ['mail.thread', 'mail.activity.mixin']

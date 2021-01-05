@@ -11,6 +11,8 @@
     'depends': [
         'base',
         'mail',
+        'sale',
+        'contacts',
     ],
     'data': [
         'views/patients_view.xml',
