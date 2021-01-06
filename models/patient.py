@@ -15,6 +15,7 @@ class HospitalPatient(models.Model):
     _inherit= ['mail.thread', 'mail.activity.mixin']
     _description= 'Manage Hospital'
     _rec_name= 'name_seq'
+    _order='name_seq desc'
 
 #    compute fields
     @api.constrains('patient_age')
