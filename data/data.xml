@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="patient" model="hospital.patient">
+            <field name="name">0819687287</field>
+            <field name="patient_name">Indri d</field>
+            <field name="patient_age">22</field>
+            <field name="gender">female</field>
+            <field name="notes">Negative</field>
+        </record>
+
+        <record id="patient_appointment" model="hospital.appointment">
+            <field name="patient_id" ref="patient"/>
+            <field name="notes">Rawat inap 2 hari</field>
+            <field name="appointment_date">01/06/2021</field>
+        </record>
+
+    </data>
+</odoo>

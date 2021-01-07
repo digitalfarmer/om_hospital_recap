@@ -56,7 +56,7 @@ class HospitalPatient(models.Model):
     patient_age = fields.Integer('Age', track_visibility='always')
     notes = fields.Text('Note')
     image = fields.Binary('Image')
-    name= fields.Char('Test')
+    name= fields.Char('Contact')
     name_seq= fields.Char("Medical Record", readonly=True, required=True, index=True, copy=False, default=lambda self: _('New'))
     appointment_count= fields.Integer("Appointment", compute='get_appointment_count')
 

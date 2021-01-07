@@ -19,10 +19,9 @@
         'views/appointment_view.xml',
         'security/ir.model.access.csv',
         'data/sequence.xml',
+        'data/data.xml',
         'reports/report.xml',
         'reports/patient_card.xml',
     ],
     'application': True,
 }
-
-#test commit
