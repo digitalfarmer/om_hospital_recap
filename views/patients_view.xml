@@ -43,8 +43,11 @@
                             <field name="appointment_count" string="Appointment" widget="statinfo"/>
                         </button>
                         <!-- smart button type action -->
-                        <button name="%(open_patient_appointment)d" type="action" class="oe_stat_button" icon="fa-archive">
+                        <button name="%(open_patient_appointment)d" type="action" class="oe_stat_button" icon="fa-usd">
                             <field name="appointment_count" string="Appointment" widget="statinfo"/>
+                        </button>
+                        <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                            <field name="active" widget="boolean_button" options="{&quot;terminology&quot;:&quot;archive&quot;}"/>
                         </button>
                     </div>
                     <field name="image" widget="image" class="oe_avatar" />
