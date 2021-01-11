@@ -20,6 +20,7 @@
         'views/appointment_view.xml',
         'views/doctor_view.xml',
         'security/ir.model.access.csv',
+        'security/security.xml',
         'data/sequence.xml',
         'data/data.xml',
         'reports/report.xml',
