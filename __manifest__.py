@@ -10,6 +10,7 @@
     'category': '',
     'depends': [
         'base',
+
         'mail',
         'sale',
         'contacts',
@@ -17,6 +18,7 @@
     'data': [
         'views/patients_view.xml',
         'views/appointment_view.xml',
+        'views/doctor_view.xml',
         'security/ir.model.access.csv',
         'data/sequence.xml',
         'data/data.xml',

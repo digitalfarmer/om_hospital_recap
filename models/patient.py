@@ -60,6 +60,7 @@ class HospitalPatient(models.Model):
     name_seq= fields.Char("Medical Record", readonly=True, required=True, index=True, copy=False, default=lambda self: _('New'))
     appointment_count= fields.Integer("Appointment", compute='get_appointment_count')
     active= fields.Boolean('Active', default=True)
+    doctor_id=fields.Many2one('hospital.doctor', 'Doctor')
 
     gender = fields.Selection([
         ('male','Male'), 

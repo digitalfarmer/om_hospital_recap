@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="doctor_view_form" model="ir.ui.view">
+        <field name="name">doctor_view_form</field>
+        <field name="model">hospital.doctor</field>
+        <field name="arch" type="xml">
+            <form string="Doctor">
+                <sheet>
+                    <group>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                    <group>
+                        <field name="gender"/>
+                        <field name="user_id"/>
+                    </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="hospital_doctor_tree" model="ir.ui.view">
+        <field name="name">hospital_doctor_view_tree</field>
+        <field name="model">hospital.doctor</field>
+        <field name="arch" type="xml">
+            <tree string="Doctor">
+                <field name="name"/>
+                <field name="gender"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_doctor" model="ir.actions.act_window">
+        <field name="name">Doctor</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hospital.doctor</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Crete first Doctor !
+            </p>
+        </field>
+    </record>
+
+    <!-- This Menu Item will appear in the Upper bar, That's why It needs NO parent or action -->
+    <menuitem id="hospital_doctor" parent="hospital_root" name="Doctor" sequence="3" action="action_doctor"/>
+</odoo> 

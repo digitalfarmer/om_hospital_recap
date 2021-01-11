@@ -66,6 +66,8 @@
                         <group>
                             <field name="name" />
                             <field name="age_group" />
+                            <field name="doctor_id" />
+
                             
                         </group>
                     </group>
