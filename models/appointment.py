@@ -44,3 +44,12 @@ class HospitalAppointment(models.Model):
             ('done', 'Done'),
             ('cancel', 'Cancel'),
         ], string='Status', default='draft')
+    appointment_lines= fields.One2many('hospital.appointment.lines','appointment_id', string="Appointment Lines")
+
+class HospitalAppointmentLines(models.Model):
+    _name= "hospital.appointment.lines"
+    _description="Appointment Lines"
+
+    appointment_id= fields.Many2one('hospital.appointment', string="Appointment ID")
+    product_id= fields.Many2one('product.product','Product')
+    product_qty= fields.Integer('quantity')
