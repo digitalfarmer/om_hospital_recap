@@ -125,4 +125,5 @@
     <!-- menu hospital  -->
     <menuitem id="hospital_root" name="Hospital" sequence="0" web_icon="om_hospital,static/description/icon.png"/>
     <menuitem id="hospital_patient" name="Patient" parent="hospital_root" action="action_patient" sequence="1"/>
+    <menuitem id="create_appointment" name="Create Appointment" parent="hospital_root" action="create_appointment_wizard"/>
 </odoo>

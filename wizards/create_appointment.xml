@@ -26,4 +26,6 @@
        <field name="view_id" ref="create_appointment_form"/>
        <field name="target">new</field>
    </record>
+
+    
 </odoo>
